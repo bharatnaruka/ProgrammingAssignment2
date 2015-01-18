@@ -1,7 +1,7 @@
 ## Function makeCacheMatrix takes a square matrix as input; creates a list of
 ## functions to add and retrieve matrix and its invserse to and from cache
 ##
-## Function takes input from above function cacheSolve() checks for inverse 
+## cacheSolve() takes input returned by above function and checks for inverse 
 ## in cache; returns it if the value exists in cache
 #############################################################################
 
@@ -22,7 +22,6 @@ makeCacheMatrix <- function(x = matrix()) {
             x <<- mat
             invmat <<- NULL
         }
-        
         get <- function() x   
         setinv <- function(inverse) invmat <<- inverse
         getinv <- function() invmat
@@ -32,7 +31,7 @@ makeCacheMatrix <- function(x = matrix()) {
     }
     else
     {
-        message("Need a square Matrix. # of components must be equal to dim^2")
+        message("Need a square Matrix i.e. ncol = nrow ")
     }
 }
 
